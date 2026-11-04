@@ -29,3 +29,6 @@ body{background:linear-gradient(rgba(234,240,233,.60),rgba(234,240,233,.60)),url
 .auth-wrap{background:linear-gradient(rgba(248,250,245,.65),rgba(248,250,245,.65)),url('/estadio-login.png') center / cover no-repeat}
 /* Mejor contraste de los campos sobre el estadio. */
 .auth-card input{border:1.5px solid #315b48}
+/* Contraste de pestañas sobre el fondo de acceso. */
+.auth-tabs button:not(.text-button){color:#284b3d}
+.auth-tabs button[aria-selected=true]:not(.text-button){color:#082b20;border-color:#75a81d}
