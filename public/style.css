@@ -18,6 +18,6 @@ input,button:not(.text-button),.panel,.match,.rank,#room-head p strong{border-ra
 @media(max-width:700px){.dashboard-intro{padding:42px 22px}.dashboard-intro h1{font-size:clamp(43px,10vw,70px)}}
 .rank-person{display:flex;align-items:center;gap:10px}.rank-number{color:#6b8275;font-weight:700}.person-icon{width:30px;height:30px;padding:5px;background:#e5f1e4;fill:none;stroke:#216448;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 /* Césped de fondo e íconos de participantes sin recuadro. */
-body{background:linear-gradient(rgba(234,240,233,.65),rgba(234,240,233,.65)),url('/cesped.png') center top / 740px 740px repeat fixed}
+body{background:linear-gradient(rgba(234,240,233,.60),rgba(234,240,233,.60)),url('/cesped.png') center top / 740px 740px repeat fixed}
 .person-icon{background:transparent;padding:2px;width:24px;height:24px}
 #app:before{display:none}
