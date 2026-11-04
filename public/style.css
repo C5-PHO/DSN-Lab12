@@ -12,3 +12,7 @@ input,button:not(.text-button),.panel,.match,.rank,#room-head p strong{border-ra
 .dashboard-intro:before{content:"";position:absolute;z-index:-1;pointer-events:none;width:410px;height:260px;right:14%;top:-120px;border:2px solid rgba(102,157,106,.14);border-radius:50%;box-shadow:0 0 0 70px rgba(126,174,125,.025),0 0 0 140px rgba(126,174,125,.025)}
 .dashboard-intro:after{content:"";position:absolute;z-index:-1;pointer-events:none;right:calc(14% + 205px);top:0;height:100%;border-left:2px solid rgba(102,157,106,.09)}
 @media(max-width:700px){.dashboard-intro:before{right:-100px;width:300px;height:210px}.dashboard-intro:after{right:50px}}
+/* Fotografía elegida para el encabezado del área de juego. */
+.dashboard-intro{margin:0 0 30px;padding:56px 36px;background:linear-gradient(90deg,rgba(4,35,28,.91) 0%,rgba(4,35,28,.70) 48%,rgba(4,35,28,.30) 100%),url('/estadio.png') center 56% / cover no-repeat;color:#fff}
+.dashboard-intro h1{color:#fff}.dashboard-intro p{color:#d5e8d9}.dashboard-intro .eyebrow{color:#b6e5a9}.dashboard-intro:before,.dashboard-intro:after{display:none}.dashboard-mark{border-color:#d7fc70}.dashboard-mark:before,.dashboard-mark .field-center{border-color:#d7fc70}
+@media(max-width:700px){.dashboard-intro{padding:42px 22px}.dashboard-intro h1{font-size:clamp(43px,10vw,70px)}}
