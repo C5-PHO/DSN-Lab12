@@ -2,6 +2,26 @@
 
 Aplicación educativa de pronósticos sin dinero real. Permite registrar usuarios, crear salas, compartir códigos de invitación, registrar partidos y pronósticos, ingresar resultados y consultar el ranking por sala. El creador de la sala administra sus partidos y resultados.
 
+## Capturas de la aplicación
+
+### Ingreso
+
+![Pantalla de ingreso a Mi Mundial](docs/capturas/ingresar.jpg)
+
+### Registro
+
+![Pantalla para crear una cuenta](docs/capturas/registro.jpg)
+
+### Salas
+
+![Panel de salas de una cuenta de prueba](docs/capturas/salas.jpg)
+
+### Pronósticos y posiciones
+
+![Resultado y tabla de posiciones de una sala de prueba](docs/capturas/partidos.jpg)
+
+El resultado y los puntos corresponden a datos de prueba. La fecha de ese partido se ajustó para probar el cálculo sin esperar al inicio.
+
 ## Arquitectura
 
 ```text
