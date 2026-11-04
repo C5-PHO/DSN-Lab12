@@ -40,3 +40,4 @@ body{background:linear-gradient(rgba(234,240,233,.60),rgba(234,240,233,.60)),url
 @keyframes balon-recorrido{0%,8%,100%{left:0;transform:translateY(-50%) rotate(0deg)}46%,54%{left:calc(100% - 15px);transform:translateY(-50%) rotate(720deg)}92%{left:0;transform:translateY(-50%) rotate(0deg)}}
 @keyframes lema-borrado{0%,8%,100%{clip-path:inset(0 0 0 0)}46%,54%{clip-path:inset(0 0 0 100%)}92%{clip-path:inset(0 0 0 0)}}
 @media(prefers-reduced-motion:reduce){.header-label-text{animation:none;clip-path:none}.header-ball{animation:none}}
+.auth-foot{color:#173e2f;font-weight:800;letter-spacing:.11em;text-shadow:0 1px 5px rgba(255,255,255,.85)}
