@@ -1,0 +1,1 @@
+{"name":"mundial-lab12","version":"1.0.0","private":true,"scripts":{"start":"node server.js","test":"node --test test.js"},"dependencies":{"bcryptjs":"^2.4.3","express":"^4.21.2","pg":"^8.13.3"}}

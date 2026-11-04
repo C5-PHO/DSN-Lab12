@@ -1,0 +1,3 @@
+function score(p){if(p.home_score===null||p.away_score===null)return null;const exact=p.home===p.home_score&&p.away===p.away_score;const winner=Math.sign(p.home-p.away)===Math.sign(p.home_score-p.away_score);const margin=p.home-p.away===p.home_score-p.away_score;return {base:exact?5:(winner?3:0)+(margin?2:0),winner,early:new Date(p.starts_at)-new Date(p.created_at)>24*60*60*1000?1:0};}
+function totals(predictions){let points=0,streak=0;for(const p of predictions){const s=score(p);if(!s)continue;if(p.home===null){streak=0;continue}points+=s.base+s.early;if(s.winner){streak++;if(streak%3===0)points+=2}else streak=0}return points}
+module.exports={score,totals};
