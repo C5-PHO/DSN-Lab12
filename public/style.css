@@ -5,3 +5,10 @@
 .match,.rank{border:0;border-radius:0;background-color:#fff;background-image:linear-gradient(#a8cbaa,#a8cbaa),linear-gradient(#a8cbaa,#a8cbaa),linear-gradient(#a8cbaa,#a8cbaa),linear-gradient(#a8cbaa,#a8cbaa),linear-gradient(#a8cbaa,#a8cbaa),linear-gradient(#a8cbaa,#a8cbaa),linear-gradient(#a8cbaa,#a8cbaa),linear-gradient(#a8cbaa,#a8cbaa);background-repeat:no-repeat;background-size:16px 2px,2px 16px,16px 2px,2px 16px,16px 2px,2px 16px,16px 2px,2px 16px;background-position:left top,left top,right top,right top,left bottom,left bottom,right bottom,right bottom}
 /* Controles y tarjetas con esquinas rectas. */
 input,button:not(.text-button),.panel,.match,.rank,#room-head p strong{border-radius:0}
+/* Fondo de cancha sutil para el área de juego. */
+#app{position:relative;isolation:isolate}
+#app:before{content:"";position:absolute;z-index:-1;pointer-events:none;top:0;left:50%;transform:translateX(-50%);width:100vw;height:490px;background:radial-gradient(ellipse at 76% 10%,rgba(157,197,145,.20),transparent 52%),repeating-linear-gradient(105deg,rgba(86,144,96,.025) 0,rgba(86,144,96,.025) 2px,transparent 2px,transparent 9px);mask-image:linear-gradient(#000 45%,transparent)}
+.dashboard-intro{position:relative;overflow:hidden;isolation:isolate}
+.dashboard-intro:before{content:"";position:absolute;z-index:-1;pointer-events:none;width:410px;height:260px;right:14%;top:-120px;border:2px solid rgba(102,157,106,.14);border-radius:50%;box-shadow:0 0 0 70px rgba(126,174,125,.025),0 0 0 140px rgba(126,174,125,.025)}
+.dashboard-intro:after{content:"";position:absolute;z-index:-1;pointer-events:none;right:calc(14% + 205px);top:0;height:100%;border-left:2px solid rgba(102,157,106,.09)}
+@media(max-width:700px){.dashboard-intro:before{right:-100px;width:300px;height:210px}.dashboard-intro:after{right:50px}}
