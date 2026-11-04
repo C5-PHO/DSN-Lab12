@@ -41,6 +41,22 @@ docker compose up -d --build
 
 Abrir http://localhost:8080. Registrar una cuenta e ingresar. Crear una sala y compartir su código con otro usuario; el creador agrega partidos futuros. Cada participante guarda su marcador antes del inicio. Los pronósticos se cierran al comenzar. El creador puede registrar o corregir el resultado a partir de dos horas después del inicio. La tabla se recalcula con cada consulta. Para detener sin borrar los datos: `docker compose down`. Para reiniciar: `docker compose up -d`. El volumen conserva los datos; `docker compose down -v` los borra permanentemente.
 
+## Escalamiento horizontal local
+
+La aplicación no guarda sesiones ni datos en memoria de una réplica: PostgreSQL es compartido. Nginx descubre las direcciones de las réplicas mediante el DNS interno de Docker y actualiza su lista sin reiniciar el balanceador. Se puede cambiar manualmente el número de instancias:
+
+```sh
+docker compose up -d --no-recreate --scale app=3
+# Volver a dos instancias
+docker compose up -d --no-recreate --scale app=2
+```
+
+Cada instancia dispone de una comprobación de salud y cierra sus conexiones al terminar. El límite predeterminado es de cinco conexiones a PostgreSQL por instancia; se puede ajustar con `DB_POOL_MAX` en `.env`. La capacidad total de conexiones de PostgreSQL debe cubrir todas las instancias y el resto de clientes. La inicialización del esquema se coordina entre réplicas para evitar cambios simultáneos.
+
+**Alcance:** Compose escala manualmente en un solo equipo; no proporciona autoescalado ni alta disponibilidad entre máquinas. PostgreSQL y Nginx siguen siendo instancias únicas y pueden limitar la disponibilidad y capacidad. Para un despliegue de producción se necesitan, entre otras cosas, una base de datos gestionada o replicada, balanceadores redundantes, métricas, pruebas de carga representativas y un orquestador que gestione salud y escalado. El control de salud de Compose informa del estado del contenedor; no elimina por sí solo una réplica no saludable del balanceo de Nginx.
+
+Verificación local: se aumentó de dos a tres réplicas sin reiniciar el balanceador y se enviaron 120 peticiones al endpoint de salud (40 por réplica). Al volver a dos, se repartieron 60 por réplica. La misma sesión conservó acceso a sus salas durante ambos cambios. Esta comprobación no es una prueba de capacidad de producción.
+
 ## Reglas e interpretación
 
 - Marcador exacto: 5 puntos base, sin sumar ganador ni diferencia por separado.
