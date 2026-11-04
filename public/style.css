@@ -32,3 +32,11 @@ body{background:linear-gradient(rgba(234,240,233,.60),rgba(234,240,233,.60)),url
 /* Contraste de pestañas sobre el fondo de acceso. */
 .auth-tabs button:not(.text-button){color:#284b3d}
 .auth-tabs button[aria-selected=true]:not(.text-button){color:#082b20;border-color:#75a81d}
+/* El balón recorre el lema y revela de nuevo las letras al regresar. */
+.header-label{position:relative;display:inline-block;padding-left:25px;white-space:nowrap}
+.header-label:before{display:none}
+.header-label-text{display:block;animation:lema-borrado 5s ease-in-out infinite}
+.header-ball{position:absolute;left:0;top:50%;width:17px;height:17px;font-size:15px;line-height:17px;transform:translateY(-50%);animation:balon-recorrido 5s ease-in-out infinite;z-index:1}
+@keyframes balon-recorrido{0%,8%,100%{left:0;transform:translateY(-50%) rotate(0deg)}46%,54%{left:calc(100% - 15px);transform:translateY(-50%) rotate(720deg)}92%{left:0;transform:translateY(-50%) rotate(0deg)}}
+@keyframes lema-borrado{0%,8%,100%{clip-path:inset(0 0 0 0)}46%,54%{clip-path:inset(0 0 0 100%)}92%{clip-path:inset(0 0 0 0)}}
+@media(prefers-reduced-motion:reduce){.header-label-text{animation:none;clip-path:none}.header-ball{animation:none}}
