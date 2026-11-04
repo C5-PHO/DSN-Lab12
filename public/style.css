@@ -21,3 +21,6 @@ input,button:not(.text-button),.panel,.match,.rank,#room-head p strong{border-ra
 body{background:linear-gradient(rgba(234,240,233,.60),rgba(234,240,233,.60)),url('/cesped.png') center top / 740px 740px repeat fixed}
 .person-icon{background:transparent;padding:2px;width:24px;height:24px}
 #app:before{display:none}
+/* Cancha decorativa en cada tarjeta de partido. */
+.match{position:relative;isolation:isolate;overflow:hidden}
+.match:before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:8px 12px 8px auto;width:min(45%,250px);background:url('/cancha.svg') center / contain no-repeat;opacity:.18}
