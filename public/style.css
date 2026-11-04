@@ -24,5 +24,3 @@ body{background:linear-gradient(rgba(234,240,233,.60),rgba(234,240,233,.60)),url
 /* Cancha decorativa en cada tarjeta de partido. */
 .match{position:relative;isolation:isolate;overflow:hidden}
 .match:before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:8px 12px 8px auto;width:min(45%,250px);background:url('/cancha.svg') center / contain no-repeat;opacity:.18}
-/* Imagen de cancha elegida como fondo de cada partido. */
-.match:before{inset:0;width:100%;background:linear-gradient(90deg,rgba(255,255,255,.93),rgba(255,255,255,.78)),url('/cancha-foto.png') center / cover no-repeat;opacity:1}
