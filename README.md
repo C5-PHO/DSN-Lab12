@@ -19,7 +19,7 @@ Requisitos: Docker Desktop y Docker Compose. En esta carpeta se generó un archi
 docker compose up -d --build
 ```
 
-Abrir http://localhost:8080. Registrar una cuenta e ingresar. Crear una sala y compartir su código con otro usuario; el creador agrega partidos futuros. Cada participante guarda su marcador antes del inicio. El creador registra el resultado después del inicio. La tabla se recalcula con cada consulta. Para detener sin borrar los datos: `docker compose down`. Para reiniciar: `docker compose up -d`. El volumen conserva los datos; `docker compose down -v` los borra permanentemente.
+Abrir http://localhost:8080. Registrar una cuenta e ingresar. Crear una sala y compartir su código con otro usuario; el creador agrega partidos futuros. Cada participante guarda su marcador antes del inicio. Los pronósticos se cierran al comenzar. El creador puede registrar o corregir el resultado a partir de dos horas después del inicio. La tabla se recalcula con cada consulta. Para detener sin borrar los datos: `docker compose down`. Para reiniciar: `docker compose up -d`. El volumen conserva los datos; `docker compose down -v` los borra permanentemente.
 
 ## Reglas e interpretación
 
